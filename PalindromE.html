@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type = "text/javascript">
+    
+    var r = "malayalam";
+    var sta = r.split("");
+    var s = 0;
+    var f =(sta.length - 1);
+    for (var c = 0; c <= sta.length/2; c ++) {
+         if (sta[c] == sta [f - c]) {
+            s = "Palindrome";
+        } else { 
+            s = "Not a palindrome";
+          } 
+    }
+    console.log(s);
+
+</script>
+</body>
+</html>
+
