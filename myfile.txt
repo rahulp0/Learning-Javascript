@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+ <html>
+ <body>
+ <script type = "text/javascript">
+    var thePrincipal = prompt("Principal in $ : ",0 );   
+    var theRate = prompt("Rate (R) in % : ", 0);
+    var theTime = prompt("Time (T) in years : ", "XXX");
+    var r = theRate/100;
+    var theCompound = prompt("Compound (n) in per year : ", "xxx");
+    var si = theInterest(thePrincipal,theTime,r);
+    var ci = theCinterest(thePrincipal, theTime,theCompound,r);
+     
+      // alert("The Simple interest in $ is : " + thePrincipal * ( 1 + ( r* theTime) ));
+ 
+    function theInterest (thePrincipal,theTime,r){
+            theInterest =  thePrincipal * ( 1 + r  * theTime) ;
+            return theInterest;
+     }
+    alert('The Simple interest is: '+ si);
+  
+     function theCinterest (thePrincipal,theTime,theCompound,r){
+             theCinterest = thePrincipal * ( 1 + r/theCompound) ^ theCompound * theTime;
+             return theCinterest;
+      }
+     alert('The Compound interest is: '+ ci);
+ 
+ 
+ </script>
+ </body>
+ </html>
+
+

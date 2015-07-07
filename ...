@@ -1,0 +1,22 @@
+[?1049h[?1h=[1;23r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[23;1HE325: ATTENTION
+Found a swap file by the name ".JL-SICAL.html.swp"
+[10Cowned by: bodhilabs1   dated: Tue Jul  7 17:49:48 2015
+[9Cfile name: ~bodhilabs1/rahul/JL-SICAL.html
+[10Cmodified: no
+[9Cuser name: bodhilabs1   host name: bodhilabs1
+[8Cprocess ID: 32198 (still running)
+While opening file "JL-SICAL.html"
+[13Cdated: Tue Jul  7 17:38:04 2015
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+    file when making changes.  Quit, or continue with caution.
+(2) An edit session for this file crashed.
+    If this is the case, use ":recover" or "vim -r JL-SICAL.html"
+    to recover the changes (see ":help recovery").
+    If you did this already, delete the swap file ".JL-SICAL.html.swp"
+    to avoid this message.
+
+Swap file ".JL-SICAL.html.swp" already exists!
+[O]pen Read-Only, (E)dit anyway, (R)ecover, (Q)uit, (A)bort:[?12l[?25h[23;1H[K[23;1H
+[?1l>[?1049l3 files to edit
