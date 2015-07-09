@@ -1,0 +1,49 @@
+<!DOCYPE html>
+<html>
+<body>
+<script type ="text/javascript">
+
+   //1
+   var anArray = "ABCDE";
+   anArray = Split (anArray);
+   console.log(anArray);  
+
+
+function Split(anArray){
+    var letters = anArray.split("");
+    return (letters);
+}  
+
+   
+   
+    //2
+    var letters = ["A","B","C","D","E"]
+    var n;
+    //CDEAB
+
+    letters = findC(letters)
+    console.log(letters);
+
+function findC (letters) {
+    for (var c = 0; c < letters.length; c++){
+        if (letters[c] == "C"){
+      n = c;
+        }
+    }
+    var newArray = [];
+    for (var k = 0; k < letters.length; k++){
+    newArray [k] = letters [n]
+    n++;
+        if (n == letters.length){
+          n = 0;
+        }
+    }
+    return (newArray)
+}
+  
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type = "text/javascript">
+    
+    var array = [ "D", "E", "F", "A", "B", "C" ];
+    var x;
+    
+    array = StartsWithC (array);
+    console.log(array);
+    
+function StartsWithC (array) {
+    for (var count = 0; count < array.length; count++){
+			if (array[count] == "C") {
+				 x = count;
+			}
+	}
+
+	var newArray = [];
+	for (var d = 0; d < array.length; d++){
+		newArray [d] = array [x];
+		x++;
+	    if (x == array.length) {
+		  x = 0;
+	    }
+    }
+ 	return (newArray);
+    
+}
+    
+ 
+
+</script>
+</body>
+</html>
+
