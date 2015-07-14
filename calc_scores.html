@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type = "text/javascript">
+   /* val = "Manchester United 1 Chelsea 0, Arsenal 1 Manchester United 1, Manchester United 3 Fulham 1, Liverpool 2 Manchester United 1, Swansea 2 Manchester United 4"
+!
+
+number of wins 3
+number of draws 1
+number of defeats 1
+goals scored 10
+goals conceded 6*/
+   
+ //   var matches = "Manchester United 1 Chelsea 0, Arsenal 1 Manchester United 1, Manchester United 3 Fulham 1, Liverpool 2 Manchester United 1, Swansea 2 Manchester United 4";
+    
+   /* number of wins 3
+   number of draws 1
+  number of defeats 1
+  goals scored 10
+  goals conceded 6*/
+    var teams ="Manchester_United 1 Chelsea 0, Arsenal 1 Manchester_United 1, Manchester_United 3 Fulham 1, Liverpool 2 Manchester_United 1, Swansea 2 Manchester_United 4"
+    var arr;
+    arr = teams.split(", ");
+    var returnObj = matches(arr);
+        console.log(returnObj);
+
+function matches(arr){
+    var MU = {};
+      MU['Goals scored'] = 0;
+      MU['Goals conceded'] =0;
+      MU['Number of defeats'] = 0;
+      MU['Number of wins'] = 0;
+      MU['Number of draws'] = 0;
+    
+    for (var count = 0; count < arr.length; count++){
+
+        var scores = arr[count].split(" ");
+
+        if ( scores.length ) {
+            
+            var goals_for_mu, goals_against_mu;
+            if ( scores[0] == 'Manchester_United' ){    
+                   goals_for_mu = parseInt(scores[1]);
+                   goals_against_mu = parseInt(scores[3]);
+            } else {
+                   goals_for_mu = parseInt(scores[3]);
+                   goals_against_mu = parseInt(scores[1]);
+            } 
+           
+            MU['Goals scored'] +=  goals_for_mu;
+            MU['Goals conceded'] += goals_against_mu;
+           
+           if ( goals_for_mu > goals_against_mu ) {
+				MU['Number of wins'] += 1
+           } else if ( goals_against_mu > goals_for_mu ) {
+				 MU['Number of defeats'] += 1;
+           } else {
+			  MU['Number of draws'] += 1;
+           } 
+     }
+
+  }
+  return(MU);
+   
+}   
+  console.log(arr);
+
+/*
+                 MU['Goals scored'] += parseInt( scores[loopCount + 1]);
+             
+                if ( scores[loopCount + 1] > scores[(loopCount+3)%2]){ 
+         	         MU['Number of wins'] += parseInt( scores[loopCount+1]); 
+                }else if(scores[loopCount + 1] < scores[(loopCount+3)%2]){
+           	             MU['Number of defeats'] += parseInt( scores[loopCount+1]) 
+                } else if ( scores[loopCount] == 'Manchester_United'){
+                            MU['Goals conceded'] += parseInt( scores[loopCount+1]%2*2)
+                } else if (MU['Goals scored'] == MU['Goals conceded']){
+                           MU['Number of draws'] += parseInt( scores[loopCount]);
+                }     
+             } 
+ */
+
+</script>
+</body>
+</html>

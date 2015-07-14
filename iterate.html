@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type = "text/javascript">
+   // var z = 0;
+    var str = ["violin", "piano","guitar","sitar","drums"];
+    console.log('array = ' , str);
+    
+ 	var finalArr= [];
+
+    for (var count = 0; count < str.length; count++) {
+    	var element = iterate(str[count]);
+	//	console.log(element);
+	
+        finalArr[count] = element;
+    }
+
+        console.log(finalArr);
+function iterate(str) {
+    var g="";
+    var x = str;
+    var newArr = x.split("") ;    
+    for (var i = 0; i < newArr.length;i++){
+        if (newArr[i]== 'a'||
+           newArr[i]== 'e'||
+           newArr[i]== 'i'||
+           newArr[i]== 'o'||
+           newArr[i]== 'u'){
+                 newArr[i] = ""
+           }
+           g += newArr[i];
+    }
+	//console.log('Output = ',g);
+    return g;
+}
+ 
+</script>
+</body>
+</html>
+
+
+array = ["violin", "piano","guitar","sitar","drums"];
+
+
+//output = ["vln", "pn","gutr","str","drms"];

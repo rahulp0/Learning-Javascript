@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type = "text/javascript">
+   /* val = "Manchester United 1 Chelsea 0, Arsenal 1 Manchester United 1, Manchester United 3 Fulham 1, Liverpool 2 Manchester United 1, Swansea 2 Manchester United 4"
+!
+
+number of wins 3
+number of draws 1
+number of defeats 1
+goals scored 10
+goals conceded 6*/
+   
+ //   var matches = "Manchester United 1 Chelsea 0, Arsenal 1 Manchester United 1, Manchester United 3 Fulham 1, Liverpool 2 Manchester United 1, Swansea 2 Manchester United 4";
+    
+   /* number of wins 3
+   number of draws 1
+  number of defeats 1
+  goals scored 10
+  goals conceded 6*/
+    var teams ="Manchester_United 1 Chelsea 0, Arsenal 1 Manchester_United 1, Manchester_United 3 Fulham 1, Liverpool 2 Manchester_United 1, Swansea 2 Manchester_United 4"
+    var arr;
+    arr = teams.split(", ");
+    var returnObj = matches(arr);
+        console.log(returnObj);
+
+function matches(arr){
+    var MU = {};
+      MU['Goals scored'] = 0;
+      MU['Goals conceded'] =0;
+      MU['Number of defeats'] = 0;
+      MU['Number of wins'] = 0;
+      MU['Number of draws'] = 0;
+
+    for (var count = 0; count < arr.length; count++){
+
+        arr[count] = arr[count].split(" ");
+        for (var loopCount = 0; loopCount < arr[count].length; loopCount++){
+
+            if ( arr[count][loopCount] == 'Manchester_United' ){    
+                 MU['Goals scored'] += parseInt( arr[count][loopCount + 1]);
+
+                if ( arr[count][loopCount + 1] > arr[count][(loopCount+3)%2]){ 
+         	         MU['Number of wins'] += parseInt( arr[count][loopCount+1]); 
+                }else if(arr[count][loopCount + 1] < arr[count][(loopCount+3)%2]){
+           	             MU['Number of defeats'] += parseInt( arr[count][loopCount+1]) 
+                } else if ( arr[count][loopCount] == 'Manchester_United'){
+                            MU['Goals conceded'] += parseInt( arr[count][loopCount+1]%2*2)
+                } else if (MU['Goals scored'] == MU['Goals conceded']){
+                           MU['Number of draws'] += parseInt( arr[count][loopCount]);
+                }     
+             } 
+         }   
+    }
+  return(MU);
+   
+}   
+  console.log(arr);
+
+
+</script>
+</body>
+</html>
