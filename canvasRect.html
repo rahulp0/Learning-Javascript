@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+
+<canvas id="myCanvas" width="1000" height="520"
+ 
+style="border:1px solid #FF0000;">
+</canvas>
+<script type = "text/javascript">
+
+//x_start = 250
+///y_start = 250
+
+/*or 1 - 9 {
+   if ( %3 ==0 ) {
+      x_start += 250;
+      y_start += 250
+  }
+  
+  ctx.fillrext ( x_start,y_start, height , widht)*/
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  ctx.fillStyle = "#00FF00";
+  
+  var x_start = 0;	
+  var y_start = 0;
+
+  for(var c = 0; c < 10; c ++){
+     if (c % 3 == 0) {
+        x_start += 250;
+        y_start = 0;
+     }else{ 
+        y_start += 200;
+      }
+      ctx.fillRect(x_start, y_start, 120, 80);
+     }
+
+//for(var count=250 ;count < 1000 ;count=count+250){
+   
+  //  for (var g = 0; g < 521; g=g+130){
+//         ctx.fillRect(count,100+g ,120,80);
+    
+
+
+</script>
+
+</body>
+</html>
+
