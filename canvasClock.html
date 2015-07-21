@@ -1,0 +1,31 @@
+//P: 106.51.142.24IP: 106.51.142.240
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="1000" height="1000" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.beginPath();
+var X_Position = 500;
+var Y_Position = 500;
+var radius = 250;
+var s_angle = -Math.PI/2;
+var counter_clockwise = Math.PI / 30;
+for (var c = 1; c < 61; c += 1){
+	ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.arc(X_Position, Y_Position, radius, s_angle, c * counter_clockwise);
+	console.log('arc ',c);
+}
+	 ctx.stroke();
+     //ctx.fill(0,255,0);
+
+</script> 
+
+</body>
+</html>
+

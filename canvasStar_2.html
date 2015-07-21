@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8">
+<title>Drawing Lines</title>
+</head>
+<body>
+<canvas id = "drawLines" width = "400" height = "500" 
+style = "border: 1px solid Black;">
+</canvas>
+<script>
+var canvas = document.getElementById("drawLines");
+var context = canvas.getContext("2d")
+
+    context.beginPath(); 
+    context.moveTo(50,50);
+    context.lineTo(120,150);
+    context.lineTo(0,180); 
+    context.lineTo(120,210);
+    context.lineTo(50,310);  
+    context.lineTo(160,250);
+    context.lineTo(190,370);
+    context.lineTo(220,250);
+    context.lineTo(330,310);
+    context.lineTo(260,210);
+    context.lineTo(380,180);
+    context.closePath();
+    context.stroke();
+</script>
+</body>
+</html>
